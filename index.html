@@ -3,11 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>SUDO-CITY | Algorithmic Urban Simulation</title>
+    <meta name="description" content="A procedural cyber-urban architect simulation where algorithms build the city using BSP and ACO." />
+    <style>
+      body {
+        margin: 0;
+        background-color: #050505;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      #loading-screen {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        background: #050505;
+        color: #39FF14;
+        transition: opacity 0.5s ease-out;
+      }
+      .logo-container {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .logo-square {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #39FF14;
+        box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+      }
+      .sq-1 { top: 0; left: 0; }
+      .sq-2 { top: 20px; left: 20px; background: #39FF14; }
+      .text-logo {
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        font-size: 2rem;
+        font-style: italic;
+        text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+      }
+    </style>
   </head>
   <body>
+    <div id="loading-screen">
+      <div class="logo-container">
+        <div class="logo-square sq-1"></div>
+        <div class="logo-square sq-2"></div>
+      </div>
+      <div class="text-logo">SUDO-CITY</div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loading-screen');
+        setTimeout(() => {
+          loader.style.opacity = '0';
+          setTimeout(() => loader.remove(), 500);
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
 

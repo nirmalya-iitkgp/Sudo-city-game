@@ -1,6 +1,6 @@
 {
   "name": "SUDO-CITY",
-  "description": "A procedural cyber-urban architect simulation where algorithms build the city.",
+  "description": "An algorithmic urban simulation where BSP, L-Systems, and Ant Colony Optimization build a thriving cyber-metropolis.",
   "requestFramePermissions": [],
   "majorCapabilities": []
 }
